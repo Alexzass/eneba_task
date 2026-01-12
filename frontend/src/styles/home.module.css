@@ -21,6 +21,7 @@
     gap: 30px;
     scrollbar-width: none;
     margin-top: 170px;
+    pointer-events: all;
 }
 
 .results{
