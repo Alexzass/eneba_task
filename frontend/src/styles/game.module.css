@@ -1,0 +1,175 @@
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-40%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.game{
+    width: 300px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    border: var(--text_col) 2px solid;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.game img{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.game:hover .mainImg{
+    transform: scale(1.05);
+}
+
+.cashbackSticker{
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 30px;
+    background-color: rgb(0, 238, 255);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 13;
+    letter-spacing: 1px;
+    font-weight: 800;
+    gap: 5px;
+    box-shadow: 0 0px 3px 1px black;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.cashbackSticker:hover{
+    width: 45%;
+    cursor: pointer;
+}
+
+.cashbackSticker img{
+    width: 20px;
+    height: 20px;
+}
+
+.launcherGrp{
+    display: flex;
+    position: absolute;
+    bottom: 35%;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text_col);
+    font-size: 13;
+    height: 25px;
+    z-index: 6;
+    backdrop-filter: blur(3);
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.281);
+}
+
+.launcherGrp::before{
+    z-index: 5;
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.launcherGrp img{
+    flex-grow: 0;
+    width: 20px;
+}
+
+.info{
+    height: 35%;
+    background-color: var(--item_bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: var(--text_col);
+    justify-self: center !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.topInfo h3:nth-child(2){
+    color: rgba(16, 192, 16, 0.607);
+    font-weight: 500;
+}
+
+.topInfo{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.botInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.botInfo h4:nth-child(3){
+    color: yellow;
+}
+
+.discountGrp span{
+    text-decoration: line-through;
+}
+
+.discountGrp{
+    color: gray;
+    display: flex;
+    font-weight: 500;
+}
+
+.discountGrp h4:nth-child(2){
+    color: yellow;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+.discountGrp h4:first-child{
+    font-weight: 300;
+}
+
+.priceGrp h2{
+    font-weight: bold;
+}
+
+.priceGrp{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.priceGrp img{
+    flex-grow: 0;
+    width: 25px;
+    flex-shrink: 0;
+}
+
+.likesGrp {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.likesGrp img{
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 25px;
+}

@@ -1,0 +1,160 @@
+.header{
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    color: var(--text_col);
+    z-index: 1000;
+    pointer-events: all;
+}
+
+.headerWrapper{
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+}
+
+.navGroup{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+    position: relative;
+}
+
+.search img{
+    position: absolute;
+    left: 12px;
+}
+
+.search input{
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg);
+    border: rgba(251, 254, 226, 0.81) 2px solid;
+    font-size: 20;
+    color: rgb(251, 242, 224);
+    padding-left: 50px;
+    outline: none;
+}
+
+.options{
+    display: flex;
+    gap: 10px;
+    height: 40px;
+    align-items: center;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.actions img:nth-child(3){
+    border-radius: 50%;
+    border: var(--text_col) 2px solid;
+}
+
+.langOption {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+}
+
+.langOption h5{
+    margin: 0;
+    margin-top: 3px;
+}
+
+.lang {
+    border-right: solid 2px white;
+    padding-right: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.currency{
+    z-index: 1000;
+    position: relative;
+}
+
+.currency h5{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 3px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.currencyDropdown h5{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+
+    z-index: 1000;
+    pointer-events: all;
+}
+
+.langDropdown, .currencyDropdown{
+    position: absolute;
+    inset: 0;
+    height: fit-content;
+    display: none;
+}
+
+.langDropdown h5{
+    cursor: pointer;
+}
+
+
+.langDropdown[data-active="true"]{
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    top: 30px;
+    background-color: var(--item_bg);
+    width: 170px;
+    align-items: center;
+    left: -33px;
+}
+
+.currencyDropdown[data-active="true"]{
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    top: 30px;
+    background-color: var(--item_bg);
+    width: 50px;
+    left: -13px;
+}
+
+
+.lang, .currency {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+}

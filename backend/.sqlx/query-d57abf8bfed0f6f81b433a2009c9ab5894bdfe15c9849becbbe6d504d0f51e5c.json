@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            UPDATE games\n            SET current_price = $1\n            WHERE id = $2;\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Float8",
+        "Int4"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "d57abf8bfed0f6f81b433a2009c9ab5894bdfe15c9849becbbe6d504d0f51e5c"
+}

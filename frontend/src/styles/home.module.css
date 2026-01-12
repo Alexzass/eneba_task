@@ -1,0 +1,36 @@
+.main{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+    pointer-events: none;
+}
+
+.games{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    position: relative;
+    height: fit-content;
+    overflow: scroll;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    scrollbar-width: none;
+    margin-top: 170px;
+}
+
+.results{
+    position: absolute;
+    inset: 0;
+    width: fit-content;
+    height: fit-content;
+    left: 15%;
+    top: 130px;
+    color: var(--text_col);
+    font-size: 17;
+    letter-spacing: 1px;
+}

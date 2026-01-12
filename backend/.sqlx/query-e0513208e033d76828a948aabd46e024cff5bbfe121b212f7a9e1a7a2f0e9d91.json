@@ -1,0 +1,56 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT id, game_name, region, platform,  original_price, current_price, likes \n                    FROM games;",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 1,
+        "name": "game_name",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 2,
+        "name": "region",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 3,
+        "name": "platform",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 4,
+        "name": "original_price",
+        "type_info": "Float8"
+      },
+      {
+        "ordinal": 5,
+        "name": "current_price",
+        "type_info": "Float8"
+      },
+      {
+        "ordinal": 6,
+        "name": "likes",
+        "type_info": "Int4"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "e0513208e033d76828a948aabd46e024cff5bbfe121b212f7a9e1a7a2f0e9d91"
+}

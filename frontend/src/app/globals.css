@@ -1,0 +1,17 @@
+:root {
+  --bg: #4618ac;
+  --item_bg: #2d1267;
+  --text_col: rgb(255, 230, 199);
+}
+
+body {
+  max-width: 100vw;
+  background-color: var(--bg);
+  margin: 0px;
+  padding: 0px;
+  font-family: "Google Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}

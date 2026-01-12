@@ -1,0 +1,77 @@
+.modal{
+    position: absolute;
+    display: flex;
+    height: 200px;
+    background-color: var(--item_bg);
+    border: 2px yellow  solid;
+    border-radius: 10px;
+    left: 20%;
+    top: -55%;
+    z-index: 20;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.modal[data-active="true"]{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inputGrp{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 5px;
+}
+
+.inputGrp input{
+    height: 40px;
+    font-size: 18;
+}
+
+.inputGrp label{
+    font-size: 20;
+    font-weight: 700;
+}
+
+.form button {
+    width: 60%;
+    height: 50px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    font-size: 18;
+    font-weight: 700;
+    background-color: yellow;
+    border: none;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.213);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.form button:hover{
+    transform: scale(1.05);
+}
+
+.inputGrp input::-webkit-inner-spin-button,
+.inputGrp input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputGrp input {
+  -moz-appearance: textfield;
+}

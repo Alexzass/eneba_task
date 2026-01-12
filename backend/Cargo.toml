@@ -1,0 +1,18 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+async-trait = "0.1.88"
+dotenvy = "0.15.7"
+serde = {version = "1.0.219", features = ["derive"]}
+serde_json = "1.0.140"
+axum = {version = "0.8.8", features = ["multipart"]}
+tokio = {version = "1.46.1", features=["full"]}
+tower = "0.5.2"
+lettre = "0.11.17"
+tower-http = {version = "0.6.6", features=["cors", "trace"]}
+tracing-subscriber = "0.3.19"
+sqlx = { version = "0.8.6", features = ["runtime-async-std-native-tls", "postgres", "chrono", "uuid"] }
+sqlx-cli = "0.8.6"
