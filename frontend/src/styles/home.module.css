@@ -22,6 +22,7 @@
     scrollbar-width: none;
     margin-top: 170px;
     pointer-events: all;
+    padding-bottom: 50px;
 }
 
 .results{

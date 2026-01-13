@@ -15,8 +15,6 @@ export default function Home(
     const clientContextApi = useContext(ClientContext);
     const [games, setGames] = useState<GameDataResponseDto | null>(null);
 
-    console.log(search)
-
     useEffect(() => {
         async function fetchGames(){
             const res = await fetch(`https://api.alexaz.dev/list${
@@ -27,7 +25,6 @@ export default function Home(
             )
 
             const data: GameDataResponseDto = await res.json();
-            console.log(data)
             setGames(data)
         }
 

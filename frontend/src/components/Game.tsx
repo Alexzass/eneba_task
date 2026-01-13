@@ -37,7 +37,7 @@ export default function Game(
             <Image alt="cashback" width={30} height={30} src={"/cashback.svg"}/>
             <h4>CASHBACK</h4>
         </div>
-        <img src={`https://api.alexaz.dev/images/${data.id}.png`} alt="game photo" className={styles.mainImg}/>
+        <img src={`https://api.alexaz.dev/images/${data.id}-${data.game_name}.png`} alt="game photo" className={styles.mainImg}/>
         <div className={styles.launcherGrp}>
             <Image alt="launcher" width={20} height={20} src={`/${data.platform}.png`}/>
             <h3>{text}</h3>

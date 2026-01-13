@@ -10,6 +10,10 @@
     pointer-events: all;
 }
 
+.navGroup img:first-child{
+    cursor: pointer;
+}
+
 .headerWrapper{
     width: 100vw;
     height: 100px;

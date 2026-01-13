@@ -1,5 +1,5 @@
 use std::{io::Write, sync::Arc};
-use axum::{Extension, Router, body::Bytes, extract::{Json, Path, Query}, http::{HeaderMap, HeaderValue, StatusCode}, response::IntoResponse, routing::{get, post, put}};
+use axum::{Extension, Router, body::Bytes, extract::{Json, Path, Query}, http::{HeaderMap, HeaderValue, StatusCode, header}, response::IntoResponse, routing::{get, post, put}};
 use crate::{db::GameExt, dtos::*, models::Game};
 use std::{fs::File, io::Read, path::PathBuf};
 
@@ -75,7 +75,7 @@ pub async fn create_games(
         }
     }
 
-    let id = app_state.db
+    let (id, game_name) = app_state.db
         .create_games(Game { id: 0, 
             game_name: game_name.unwrap(), 
             region: region.unwrap(), 
@@ -91,7 +91,7 @@ pub async fn create_games(
             )
         })?;
 
-    let file_path = format!("photos/{}.png", id.to_string());
+    let file_path = format!("photos/{}-{}.png", id.to_string(), game_name);
 
     let mut file = File::create(&file_path).ok().unwrap();
     file.write_all(&bytes.unwrap()).map_err(|e| {

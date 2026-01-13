@@ -5,6 +5,7 @@ import { useState, useRef, RefAttributes } from "react"
 import styles from "@/styles/header.module.css"
 import { useContext } from "react"
 import { ClientContext } from "./ClientProvider"
+import { useRouter } from "next/navigation"
 
 export default function Header(){
     const [lang, setLang] = useState("en");
@@ -12,6 +13,7 @@ export default function Header(){
     const langRef = useRef<HTMLDivElement | null>(null);
     const currencyRef = useRef<HTMLDivElement | null>(null);
     const clientContextApi = useContext(ClientContext);
+    const router = useRouter();
 
     function handleLangDropdown(){
         if (langRef.current === null) {
@@ -33,7 +35,9 @@ export default function Header(){
     return <div className={styles.headerWrapper}>
         <header className={styles.header}>
             <div className={styles.navGroup}>
-                <h1>eneba</h1>
+                <Image width={150} height={50} alt={"logo"}src={"/logo.svg"} onClick={() => {
+                    window.location.href = "/"
+                }}/>
                 <form className={styles.search}>
                     <Image width={30} height={30} alt="search" src={"search.svg"}/>
                     <input name="search" type="text"></input>

@@ -31,7 +31,7 @@ pub trait GameExt{
     async fn create_games( 
         &self, 
         game: Game
-    ) -> Result<i64, sqlx::Error>;
+    ) -> Result<(i64, String), sqlx::Error>;
 
     async fn update_price(
         &self,
@@ -154,8 +154,8 @@ impl GameExt for DBClient{
     async fn create_games( 
         &self, 
         game: Game
-    ) -> Result<i64, sqlx::Error>{
-        let id = sqlx::query!(
+    ) -> Result<(i64, String), sqlx::Error>{
+        let res = sqlx::query!(
             r#"
             INSERT INTO games (
                 game_name,
@@ -166,7 +166,7 @@ impl GameExt for DBClient{
                 likes
             )
             SELECT $1, $2, $3, $4, $5, $6
-            RETURNING id;
+            RETURNING id, game_name;
             "#,
             &game.game_name,
             &game.region,
@@ -177,7 +177,7 @@ impl GameExt for DBClient{
         ).fetch_one(&self.pool).await?;
 
 
-        Ok(id.id as i64)
+        Ok((res.id as i64, res.game_name))
     }
 
     async fn update_price(

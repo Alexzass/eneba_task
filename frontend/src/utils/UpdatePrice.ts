@@ -11,7 +11,5 @@ export default async function updatePrice(data: FormData, id: number){
         }
     );
 
-    console.log(res.status);
-
     return res
 };
