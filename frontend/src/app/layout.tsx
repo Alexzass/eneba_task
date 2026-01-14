@@ -4,6 +4,13 @@ import Header from "@/components/Header";
 import { ClientContextProvider } from "@/components/ClientProvider";
 import CreateGameModal from "@/components/CreateGameModal";
 
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Eneba',
+  description: 'Games, Gift Cards, Top-Ups & More | Best Deals',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
